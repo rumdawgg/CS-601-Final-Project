@@ -1,0 +1,2 @@
+<?php if (isset($status['error']) && $status['error']) { ?> <div class="errorMessage"><?php print $status['error'] ?></div><?php } ?>
+<?php if (isset($status['message']) && $status['message']) { ?> <div class="message"><?php print $status['message'] ?></div><?php } ?>
