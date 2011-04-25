@@ -1,6 +1,6 @@
 <?php session_start();
 
-include "../includes/database.php";
+require "../includes/database.php";
 
 if (empty($_SESSION['userID'])) {
     print "You MUST be logged in to view this page.";

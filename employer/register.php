@@ -1,6 +1,6 @@
 <?php
 
-include '../includes/database.php';
+require "../includes/database.php";
 
 if ($_POST) {
 
