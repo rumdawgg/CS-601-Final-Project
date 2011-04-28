@@ -1,0 +1,9 @@
+<?php
+
+mysql_connect("database-host", "database-user", "database-password")
+or die("Server error: Check database connection!");
+
+mysql_select_db("databasename")
+or die("Server error: Database not found in MySQL!");
+
+?>
