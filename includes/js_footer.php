@@ -1,4 +1,3 @@
-
 <div class="center">
 <a href="http://www.centos.org/"><img title="The Community ENTerprise Operating System" src="../img/centos.png"/></a>
 <a href="http://httpd.apache.org/"><img title="Apache HTTP Web Server" src="../img/apache_pb.gif"/></a>
