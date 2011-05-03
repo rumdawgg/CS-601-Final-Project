@@ -1,6 +1,6 @@
 <?php session_start();
 
-include("mysql_logon.php");
+require "includes/database.php";
 
 if (empty($_SESSION['userID'])) {
 	print "You MUST be logged in before you can apply for a job!!";
