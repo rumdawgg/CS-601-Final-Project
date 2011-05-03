@@ -1,0 +1,1 @@
+<div class="account"><a href="index.php">Main Page</a>    <a href="viewall.php">Show All Jobs</a>    <a href="myjobs.php">My Jobs</a></div>
