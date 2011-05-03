@@ -1,8 +1,21 @@
-<form action="BookSwap.php?cmd=search" method="post">
-Search Type:<select name="searchtype">
-<option value="job_title">Title</option>
-<option value="job_city">City</option>
-<option value="job_state">State</option>
-<option value="job_title">Interest Area</option>
-</select>Search Term:<input type="text" name="searchterm">
-<input name="submit" type="submit" value="Search"></form>
+<?php session_start(); ?>
+
+
+<html>
+    <head>
+        <title>Job Seek :: View Job</title>
+        <link rel="stylesheet" href="includes/jobseek_styles.css" type="text/css" />
+    </head>
+    <body>
+        <?php require "includes/js_header.php";?>
+        <?php require "includes/message_bar.php";?>
+        <?php // Are we logged in?
+        if (empty($_SESSION['userAuthenticated'])) { 
+        include "includes/login_box.html"; 
+        } else {
+            include "searchjobform.php";
+        }
+        require "includes/js_footer.php"; ?>
+    </body>
+    </body>
+</html>
