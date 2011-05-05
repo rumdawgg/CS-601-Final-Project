@@ -31,6 +31,7 @@ try {
             $_SESSION['userAuthenticated'] = true;
             $_SESSION['userEmail'] = $email;
             $_SESSION['userID'] = $id;
+            $_SESSION['userType'] = "employer";
             
         } else {
             $status['error'] = "Incorrect username or password.";
