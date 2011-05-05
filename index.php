@@ -15,9 +15,9 @@ try {
     if (empty($_SESSION['userAuthenticated']) && $_POST) {
     
         $user = $_POST['user'];
-        $pass = $_POST['pass'];
+        $pass = sha1($_POST['pass']);
         
-        $query = "select * from users where email = '$user' AND password = PASSWORD('$pass');";
+        $query = "select * from users where email = '$user' AND password = '$pass';";
        
         $results = mysql_query($query)
         or die("Query error: " . mysql_error());
@@ -30,6 +30,7 @@ try {
             $_SESSION['userAuthenticated'] = true;
             $_SESSION['userEmail'] = $email;
             $_SESSION['userID'] = $id;
+            $_SESSION['userType'] = "jobseeker";
             
         } else {
             $status['error'] = "Incorrect username or password.";
@@ -53,6 +54,7 @@ try {
         <?php // Are we logged in?
         if (empty($_SESSION['userAuthenticated'])) { 
         include "includes/login_box.html"; 
+        echo '<div>Are you an employer? Go <a href="employer/">here</a> to login</div><br/>';
         } else {
             include "includes/account_menu.php";
         }
