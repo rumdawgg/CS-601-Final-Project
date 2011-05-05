@@ -28,17 +28,21 @@ if ($_GET) {
         <link rel="stylesheet" href="../includes/jobseek_styles.css" type="text/css" />
     </head>
     <body>
+        <?php require "../includes/js_header.php";?>
+        <?php require "../includes/message_bar.php";?>
+        <?php require "../includes/menubar.php";?>
         <form method="POST" action="delete.php" name="delete">
-            <?php if (mysql_num_rows($results)) { ?>
+            <div><?php if (mysql_num_rows($results)) { ?>
             <div>Job Title: <?php print($job_title); ?></div>
             <div>Requisition Number: <?php print($req_number); ?></div>
             <div>Job Description: <?php print($description); ?></div>
             <div>Salary: <?php print($salary); ?></div>
             <input type="hidden" name="jobID" value="<?php echo $id; ?>">
-            <div><input type="submit" value="Delete"></div>
+            <div><input type="submit" value="Delete"></div></div>
         </form>
         <?php } else { ?>
         <div>Can't find a job with that ID!</div>
-        <?php } ?>  
+        <?php }
+        require "../includes/js_footer.php";?>
     </body>
 </html>
