@@ -1,6 +1,6 @@
 <?php session_start();
 
-include('mysql_logon.php');
+require "includes/database.php";
 
 if ($_GET) {
 
@@ -24,10 +24,13 @@ if ($_GET) {
 <html>
     <head>
         <title>Job Seek :: View Job</title>
-        <link rel="stylesheet" href="jobseek_styles.css" type="text/css" />
+        <link rel="stylesheet" href="includes/jobseek_styles.css" type="text/css" />
     </head>
     <body>
-        <form method="POST" action="apply.php" name="apply">
+        <?php require "includes/js_header.php";?>
+        <?php require "includes/message_bar.php";?>
+        <?php require "includes/menubar.php";?>
+        <div><form method="POST" action="apply.php" name="apply">
             <?php if (mysql_num_rows($results)) { ?>
             <div>Job Title: <?php print($job_title); ?></div>
             <div>Requisition Number: <?php print($req_number); ?></div>
@@ -35,9 +38,10 @@ if ($_GET) {
             <div>Salary: <?php print($salary); ?></div>
             <input type="hidden" name="jobID" value="<?php echo $id; ?>">
             <div><input type="submit" value="Apply"></div>
-        </form>
+        </form></div>
         <?php } else { ?>
         <div>Can't find a job with that ID!</div>
-        <?php } ?>  
+        <?php } 
+        require "includes/js_footer.php";?>  
     </body>
 </html>
