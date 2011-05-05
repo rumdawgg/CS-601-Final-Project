@@ -1,6 +1,7 @@
 <?php session_start();
 
 require "../includes/database.php";
+include "../includes/logoncheck.php";
 
 if ($_GET) {
 

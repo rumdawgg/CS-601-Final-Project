@@ -1,13 +1,7 @@
 <?php session_start();
 
 require "../includes/database.php";
-
-if (empty($_SESSION['userID'])) {
-    print "You MUST be logged in to view this page.";
-    print "Redirecting you in 5 seconds...";
-    header('Refresh: 5;  index.php');
-    exit;
-}
+include "../includes/logoncheck.php";
 
 $user = $_SESSION['userID'];
 $rowstart = 0;
@@ -22,6 +16,9 @@ $num_results = mysql_num_rows($results);?>
         <link rel="stylesheet" href="../includes/jobseek_styles.css" type="text/css" />
     </head>
     <body>
+        <?php require "../includes/js_header.php";?>
+        <?php require "../includes/message_bar.php";?>
+        <?php require "../includes/menubar.php";?>
         <div>You have posted <?php print "$num_results" ?> job(s):</div><br/>
         <table>
         <tr class="boxtitle"><th>Title</th><th>Requisition Number</th><th>Area of Interest</th><th>Location</th><th>Delete</th></tr>
@@ -31,5 +28,6 @@ $num_results = mysql_num_rows($results);?>
 <?php       } ?>
         </table>
         <br />
+        <?php require "../includes/js_footer.php"; ?>
     </body>
 </html>
