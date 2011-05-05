@@ -25,7 +25,7 @@ if ($_POST) {
         $status['error'] = "Password field is blank!";  
     }
     if(empty($status['error'])) {
-        $query = "INSERT INTO employers(first_name, last_name, company, email, password, created) VALUES ('$first_name', '$last_name', '$company', '$email', '$password', NOW() );";
+        $query = "INSERT INTO employers(first_name, last_name, company, email, password, created) VALUES ('$first_name', '$last_name', '$company', '$email', '$password', curdate() );";
         mysql_query($query)
         or die("Server Error: ".mysql_error());
         $status['message'] = "Successful Registration!";
