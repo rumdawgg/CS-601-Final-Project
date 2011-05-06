@@ -13,7 +13,7 @@ if (isset($_POST['searchtype']) && isset($_POST['searchterm'])){
 } else if(isset($_REQUEST['searchtype']) && isset($_REQUEST['searchterm'])){
     $searchtype = $_REQUEST['searchtype'];
     $searchterm = $_REQUEST['searchterm'];
-    echo "blah";
+    //echo "blah";
 } else {
     header('Location: searchjob.php');
 }

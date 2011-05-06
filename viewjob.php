@@ -42,6 +42,6 @@ if ($_GET) {
         <?php } else { ?>
         <div>Can't find a job with that ID!</div>
         <?php } 
-        require "includes/js_footer.php";?>  
+        require "includes/js_footer.php";?>
     </body>
 </html>

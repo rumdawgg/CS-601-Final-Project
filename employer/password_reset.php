@@ -10,8 +10,8 @@ if ($_POST) {
     if ($password != $passwordconf) {
         $status['error'] = "Passwords do not match!";
     } else {
-        //$query = "UPDATE employers SET password = '$password', temphash = null;";
-        $query = "UPDATE employers SET password = '$password';";
+        $query = "UPDATE employers SET password = '$password', temphash = null;";
+        //$query = "UPDATE employers SET password = '$password';";
         //echo $query;
         $results = mysql_query($query)
         or die("Query error: " . mysql_error());

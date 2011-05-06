@@ -32,7 +32,7 @@ if ($_POST) {
 
     if ( $status['error'] == NULL ) {
         $query = "INSERT INTO jobs(job_title, req_number, interest, city, state, type, description, requirements, salary, date_posted, posted_by) VALUES (\"$job_title\", \"$req_number\", \"$interest\", \"$city\", \"$state\", \"$type\", \"$description\", \"$requirements\", \"$salary\", curdate(), \"$user\" )";
-        echo $query;
+        //echo $query;
         mysql_query($query)
         or die("Server Error: ".mysql_error());
     }

@@ -13,6 +13,7 @@ $user = $_SESSION['userID'];
 $rowstart = 0;
 $last = $rowstart;
 $query = "SELECT * FROM jobs JOIN applied ON jobs.req_number=applied.job where applied.user = $user;";
+//echo $query;
 $results = mysql_query($query);
 $num_results = mysql_num_rows($results);?>
 
